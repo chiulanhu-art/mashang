@@ -1,0 +1,28 @@
+# 每個交易日（週一到週五）台灣時間下午 3:30，自動抓證交所收盤資料並更新 data/market.js
+name: 更新股市資料
+
+on:
+  schedule:
+    - cron: "30 7 * * 1-5"   # UTC 07:30 = 台灣時間 15:30
+  workflow_dispatch:          # 也可以在 GitHub 的 Actions 頁面手動按「Run workflow」
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 抓取資料
+        run: python scripts/fetch_data.py
+      - name: 有變動才存檔
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market.js
+          git diff --cached --quiet || git commit -m "更新股市資料 $(date +%F)"
+          git push
