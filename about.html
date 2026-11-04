@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>關於本站｜馬上有錢</title>
+  <meta name="description" content="關於馬上有錢：資料來源、更新時間與免責聲明。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="about">
+
+  <header class="site-header">
+    <a class="logo" href="index.html">馬上有錢</a>
+    <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="主選單">
+      <a href="index.html">首頁</a>
+      <a href="rank.html">排行榜</a>
+      <a href="stock.html">個股查詢</a>
+      <a href="learn.html">名詞小教室</a>
+      <a href="about.html" aria-current="page">關於本站</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img src="images/hero.jpg" alt="清晨雲層下的台北市景">
+      <div class="inner">
+        <div class="en">About</div>
+        <h1>關於本站</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-no">01</div>
+          <div><h2>開盤前的五分鐘</h2></div>
+        </div>
+        <div class="prose reveal">
+          <p>「馬上有錢」是一份給一般投資人的盤前筆記。每天早上開盤前，花五分鐘看看昨天收盤發生了什麼：大盤漲了還是跌了、哪些股票特別熱門、自己關心的股票表現如何。</p>
+          <p>我們希望把數字整理得安靜、清楚，讓你用自己的步調理解市場，而不是被資訊追著跑。</p>
+
+          <h2>資料從哪裡來</h2>
+          <ul>
+            <li>資料來源：<a href="https://openapi.twse.com.tw/" target="_blank" rel="noopener">臺灣證券交易所 OpenAPI</a>（上市股票與 ETF 的每日收盤資料）。</li>
+            <li>更新時間：每個交易日下午 3:30 左右自動更新。遇到假日或資料源延遲，可能會晚一點更新。</li>
+            <li>本站顯示的是「前一個交易日的收盤資料」，<strong>不是即時股價</strong>。</li>
+            <li>目前資料日期：<span data-date></span>（更新於 <span data-generated></span>）。</li>
+          </ul>
+
+          <h2>免責聲明</h2>
+          <div class="disclaimer-box">
+            <p>本站所有內容僅供參考與學習使用，<strong>不構成任何投資建議</strong>，也不代表推薦買進或賣出任何股票。</p>
+            <p>資料雖取自公開來源，仍可能因延遲、轉換或其他原因而有錯誤或缺漏，請以臺灣證券交易所公告為準。</p>
+            <p style="margin:0">投資一定有風險，過去的表現不代表未來。請依自己的狀況審慎判斷，並自行承擔投資結果。</p>
+          </div>
+
+          <h2>照片來源</h2>
+          <p class="credits">本站照片皆來自 <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>，依 Unsplash License 免費使用，感謝攝影師：
+            <a href="https://unsplash.com/@maxchen2k" target="_blank" rel="noopener">Max Chen</a>、
+            <a href="https://unsplash.com/@dragontw" target="_blank" rel="noopener">Frank de Kock</a>、
+            <a href="https://unsplash.com/@jcs_chen" target="_blank" rel="noopener">Zion C</a>、
+            <a href="https://unsplash.com/@donaldart" target="_blank" rel="noopener">Poh Soo Donald Soh</a>、
+            <a href="https://unsplash.com/@mattiasdiesel" target="_blank" rel="noopener">Mattias Diesel</a>。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a class="logo" href="index.html">馬上有錢</a>
+      <div>
+        <p class="warn">本站資料來源為臺灣證券交易所公開資料，於每個交易日收盤後自動更新，內容僅供參考，不構成任何投資建議。投資有風險，請自行判斷並承擔結果。</p>
+        <nav aria-label="頁尾選單">
+          <a href="rank.html">排行榜</a><a href="stock.html">個股查詢</a><a href="learn.html">名詞小教室</a><a href="about.html">關於本站</a>
+        </nav>
+      </div>
+      <div class="copy"><span>資料日期 <span data-date></span>　更新於 <span data-generated></span></span><span>© 馬上有錢</span></div>
+    </div>
+  </footer>
+
+  <script src="data/market.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

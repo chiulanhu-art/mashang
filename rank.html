@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>排行榜｜馬上有錢</title>
+  <meta name="description" content="昨日台股漲幅、跌幅、成交量前十名排行。資料來源為臺灣證券交易所公開資料，僅供參考。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="rank">
+
+  <header class="site-header">
+    <a class="logo" href="index.html">馬上有錢</a>
+    <button class="menu-btn" type="button" aria-label="開啟選單" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" aria-label="主選單">
+      <a href="index.html">首頁</a>
+      <a href="rank.html" aria-current="page">排行榜</a>
+      <a href="stock.html">個股查詢</a>
+      <a href="learn.html">名詞小教室</a>
+      <a href="about.html">關於本站</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img src="images/city.jpg" alt="晨光灑落的台北城市天際線">
+      <div class="inner">
+        <div class="en">Ranking</div>
+        <h1>排行榜</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div class="sec-no">01</div>
+          <div>
+            <h2>昨日前十名</h2>
+            <p><span data-date></span> 收盤資料。漲跌幅是「跟前一天收盤價比，變動了百分之幾」。點任何一列可以看那檔股票的詳細資料。</p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" data-kind="up" aria-selected="true">漲幅</button>
+          <button type="button" role="tab" data-kind="down" aria-selected="false">跌幅</button>
+          <button type="button" role="tab" data-kind="volume" aria-selected="false">成交量</button>
+        </div>
+        <div class="filter" role="radiogroup" aria-label="篩選">
+          <label><input type="radio" name="f" value="all" checked><span>全部</span></label>
+          <label><input type="radio" name="f" value="stock"><span>只看股票</span></label>
+          <label><input type="radio" name="f" value="etf"><span>只看 ETF</span></label>
+        </div>
+
+        <div class="table-wrap" data-needs-data>
+          <table class="rank">
+            <thead>
+              <tr><th>排名</th><th>名稱／代號</th><th>收盤價</th><th>漲跌</th><th>漲跌幅</th><th>成交量</th></tr>
+            </thead>
+            <tbody id="rank-body"></tbody>
+          </table>
+        </div>
+        <p class="note">※ 台股單日漲跌幅上限通常是 10%，所以漲跌幅排行前幾名常常是「漲停」或「跌停」的股票。ETF 代號多以 00 開頭。手機上表格可以左右滑動。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a class="logo" href="index.html">馬上有錢</a>
+      <div>
+        <p class="warn">本站資料來源為臺灣證券交易所公開資料，於每個交易日收盤後自動更新，內容僅供參考，不構成任何投資建議。投資有風險，請自行判斷並承擔結果。</p>
+        <nav aria-label="頁尾選單">
+          <a href="rank.html">排行榜</a><a href="stock.html">個股查詢</a><a href="learn.html">名詞小教室</a><a href="about.html">關於本站</a>
+        </nav>
+      </div>
+      <div class="copy"><span>資料日期 <span data-date></span>　更新於 <span data-generated></span></span><span>© 馬上有錢</span></div>
+    </div>
+  </footer>
+
+  <script src="data/market.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
