@@ -1,9 +1,10 @@
-# 每個交易日（週一到週五）台灣時間下午 3:30，自動抓證交所收盤資料並更新 data/market.js
+# 每個交易日晚上 8 點自動抓證交所收盤資料並更新 data/market.js，隔天早上 7 點再補抓一次
 name: 更新股市資料
 
 on:
   schedule:
-    - cron: "30 7 * * 1-5"   # UTC 07:30 = 台灣時間 15:30
+    - cron: "0 12 * * 1-5"   # UTC 12:00 = 台灣時間週一到週五 20:00（證交所通常傍晚才公布當天資料）
+    - cron: "0 23 * * 0-4"   # UTC 23:00 = 台灣時間週一到週五 07:00（開盤前補抓一次）
   workflow_dispatch:          # 也可以在 GitHub 的 Actions 頁面手動按「Run workflow」
 
 permissions:
